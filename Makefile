@@ -1,20 +1,11 @@
-objects = main.o
+Driver.exe: driver.o
+	g++ -Wall -g -o Driver.exe driver.o Neuron.o
 
-ifeq ($(OS),Windows_NT)
-	#Windows stuff
-	RM = del
-	#echo "Compiling for windows."
-else
-	#Linux stuff
-	#echo "Compiling for linux."
-	RM = rm
-endif
+driver.o: driver.cpp Neuron.o
+	g++ -Wall -c driver.cpp -o driver.o
 
-driver.exe: driver.o
-	cc -o driver.exe driver.o
-
-driver.o: driver.c
-	cc -c driver.c
+Neuron.o: Neuron.h Neuron.cpp
+	g++ -Wall -c Neuron.cpp -o Neuron.o
 
 clean :
 	$(RM) *.obj
