@@ -6,16 +6,20 @@
 
 ==============================================================================================*/
 
+	class Neuron;
+
 	#ifndef __NEURON_H_INCLUDED__
 		#define __NEURON_H_INCLUDED__
-		#include "Includes.h"
+		#include "Neural_Net.h"
+
+		//class Neural_Net;
 
 		class Neuron
 		{
 		public:
 			void Test();
+			Neural_Net * NN;
 		};
-
 
 	#endif
 
