@@ -10,9 +10,7 @@
 
 	#ifndef __NEURON_H_INCLUDED__
 		#define __NEURON_H_INCLUDED__
-		#include "Neural_Net.h"
-
-		//class Neural_Net;
+		#include "Includes.h"
 
 		class Neuron
 		{
