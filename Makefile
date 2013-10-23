@@ -7,6 +7,8 @@ driver.o: driver.cpp Neuron.o
 Neuron.o: Neuron.h Neuron.cpp
 	g++ -Wall -c Neuron.cpp -o Neuron.o
 
+Neuron.h: Includes.h
+
 clean :
 	$(RM) *.obj
 	$(RM) *.o

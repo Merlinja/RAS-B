@@ -2,21 +2,15 @@
 //----------------------------------------------------------------------------------------------
 /*==============================================================================================
 
-	Class: Neuron - [N]
+	File: Includes.h
+
+	This file should contain includes for all components of the Neural Network.
 
 ==============================================================================================*/
 
-	#ifndef __NEURON_H_INCLUDED__
-		#define __NEURON_H_INCLUDED__
-		#include "Includes.h"
-
-		class Neuron
-		{
-		public:
-			void Test();
-		};
-
-
+	#ifndef __INCLUDES_H_INCLUDED__
+		#define __INCLUDES_H_INCLUDED__
+		#include "Neuron.h"
 	#endif
 
 /*============================================================================================*/
