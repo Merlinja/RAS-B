@@ -1,0 +1,20 @@
+# Jacob Yearous
+
+# C compiling flags
+CC=gcc
+CFLAGS= -g -Wall
+
+# Source file macros
+SRCS = Main.c
+OBJS = ${SRCS:.c=.o}
+
+# Turning '.c' to '.o'
+.SUFFIXES: .c .o
+.c.o:; $(CC) $(CFLAGS) -c $<
+
+# Dependancies
+Organizer: $(OBJS)
+	$(CC) $(CFLAGS) -o Organizer $(OBJS)
+
+clean:
+	rm -f -r Organizer *.o
