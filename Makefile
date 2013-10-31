@@ -24,13 +24,13 @@ driver.o: driver.cpp ${OBJS}
 	$(CC) $(CFLAGS) driver.cpp -o driver.o
 
 Experiment_1.o: Experiment_1.cpp ${OBJS} ${SRCS}
-	$(CC) $(CFLAGS) -c Experiment_1.cpp -o Experiment_1.o
+	$(CC) $(CFLAGS) Experiment_1.cpp -o Experiment_1.o
 
 Neuron.o: Neuron.h Neuron.cpp
-	$(CC) $(CFLAGS) -c Neuron.cpp -o Neuron.o
+	$(CC) $(CFLAGS) Neuron.cpp -o Neuron.o
 
 Neural_Net.o: Neural_Net.h Neural_Net.cpp
-	$(CC) $(CFLAGS) -c Neural_Net.cpp -o Neural_Net.o
+	$(CC) $(CFLAGS) Neural_Net.cpp -o Neural_Net.o
 
 clean :
 	$(RM) *.o
