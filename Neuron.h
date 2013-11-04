@@ -2,22 +2,69 @@
 //----------------------------------------------------------------------------------------------
 /*==============================================================================================
 
-	Class: Neuron - [N]
+	Neuron.h
+
+	Classes:
+	- Neuron - [N]
+	- LN_Neuron - "List Node - Neuron"
+
+	Neuron - [N]
+		Each and every unique idea is represented in a single neuron, each neuron can
+	be composed of mutliple other neurons, each composition may be simple or complex
+	(determined by complexity rating). Neural nets solver problems by determining which
+	Neurons / ideas seem to be true at the moment, and use the relations between them to
+	determine probable outcomes of each available action.
 
 ==============================================================================================*/
 
 	class Neuron;
+	class LN_Neuron;
 
 	#ifndef __NEURON_H_INCLUDED__
 		#define __NEURON_H_INCLUDED__
 		#include "Includes.h"
 
-		class Neuron
-		{
-		public:
-			void Test();
-			Neural_Net * NN;
-		};
+		/*==============================================================================================
+
+			Class: Neuron - [N]
+
+		==============================================================================================*/
+
+			class Neuron {
+
+				public:
+					// Finished
+
+					// Test
+					void Test();
+					Neural_Net * NN;
+
+					// Unfinished
+					
+			};
+
+		/*============================================================================================*/
+		//----------------------------------------------------------------------------------------------
+		//----------------------------------------------------------------------------------------------
+		/*==============================================================================================
+
+			Class: LN_Neuron - "List Node - Neuron"
+
+		==============================================================================================*/
+
+			class LN_Neuron {
+
+				public:
+					// Finished
+
+					// Unfinished
+					Neuron * Next;
+					Neuron * Prev;
+					Neuron * Target;
+					bool Permanent;
+			};
+
+		/*============================================================================================*/
 
 	#endif
 
