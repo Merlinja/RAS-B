@@ -35,7 +35,7 @@
 					/*==============================================================================================
 						Finished
 					----------------------------------------------------------------------------------------------*/
-					
+						int ID;
 					/*----------------------------------------------------------------------------------------------
 						[END] Finished
 					==============================================================================================*/
@@ -64,10 +64,16 @@
 							----------------------------------------------------------------------------------------------*/
 								// Prints a report, user specifies how much detail to give for each category.
 								void Print_Report(
+									// Positive integers: Print active
+									// Negative integers: Print all
+									FILE * FD = stdout, // File decriptor for report output
 									int SD = 1, // Synapse detail
 									int ND = 1, // Neuron detail
 									int NGD = 1, // Neural Group detail
 									int TND = 1); // Time Node detail
+
+								// Prints header for NN
+								void Print_Header(FILE * FD = stdout);
 						/*----------------------------------------------------------------------------------------------
 							[END] Input / Output
 						==============================================================================================*/
@@ -76,7 +82,8 @@
 						Neural_Net();
 
 						// Identification
-						std::string Alias;
+						//std::string Alias;
+						char* Alias;
 
 						void Test();
 						Neuron * N;
