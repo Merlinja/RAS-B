@@ -70,6 +70,7 @@
 									int SD = 1, // Synapse detail
 									int ND = 1, // Neuron detail
 									int NGD = 1, // Neural Group detail
+									int CHD = 1, // Channel node detail
 									int TND = 1); // Time Node detail
 
 								// Prints header for NN
