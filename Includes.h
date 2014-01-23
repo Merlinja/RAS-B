@@ -11,6 +11,7 @@
 	#include <cstdio>
 	#include <cstring>
 	#include <string>
+	#include <cmath>
 
 	#include "Neuron.h"
 	#include "Neural_Net.h"
