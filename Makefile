@@ -1,5 +1,5 @@
 # Source file macros
-SRCS = Neural_Net.cpp Neuron.cpp Registration_Node.cpp Synapse.cpp
+SRCS = Neural_Net.cpp Neuron.cpp Registration_Node.cpp Synapse.cpp Neural_Group.cpp
 OBJS = ${SRCS:.cpp=.o}
 HDRS = ${SRCS:.cpp=.h}
 EXCS =Driver E1
