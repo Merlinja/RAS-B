@@ -82,6 +82,10 @@
 						// Constructor
 						Neural_Net();
 
+						// Neural Groups
+						int New_NG();
+						Neural_Group * Get_NG(int NG_ID);
+
 						// Identification
 						//std::string Alias;
 						char* Alias;
@@ -116,6 +120,11 @@
 						Unfinished 
 					----------------------------------------------------------------------------------------------*/
 						
+						// Neural Groups
+						int Next_NG_ID; // ID reserved for next created neural group
+						Neural_Group * First_NG;
+						Neural_Group * Last_NG;
+						Neural_Group * Construct_New_NG();
 
 					/*----------------------------------------------------------------------------------------------
 						[END] Unfinished

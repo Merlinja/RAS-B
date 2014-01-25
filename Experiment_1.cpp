@@ -148,6 +148,12 @@
 		N.Test();
 		Neural_Net NN;
 		NN.Test();
+		NN.New_NG();
+		NN.Print_Report();
+		NN.New_NG();
+		NN.Print_Report();
+		NN.New_NG();
+		NN.Print_Report(stdout, 1,1,5,1,1);
 		return 0;
 	}
 

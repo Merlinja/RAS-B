@@ -28,6 +28,43 @@
 	};
 
 	/*==============================================================================================
+		Neural Groups
+	----------------------------------------------------------------------------------------------*/
+
+		// Create a new neural group and return ID
+		int Neural_Net::New_NG() {
+			Neural_Group * NG = Construct_New_NG();
+			return NG->ID;
+		};
+
+		// Create a new neural group and return pointer
+		Neural_Group * Neural_Net::Construct_New_NG() {
+
+			// Declare report
+			if (NN_Modification_Active) {
+				Print_Header(NN_Modification);
+				fprintf(NN_Modification, " <CREATING NEW NEURAL GROUP>");
+			};
+
+			Neural_Group * NG = new Neural_Group();
+			NG->ID = Next_NG_ID; // Assign ID
+			Next_NG_ID++;
+			NG->Parent_NN = this; // Assign parent NN
+
+			// Add NG to NG list
+			if (First_NG == NULL || Last_NG == NULL) {
+				First_NG = NG;
+				Last_NG = NG;
+			} else {
+				Last_NG->Next_NG = NG;
+				NG->Prev_NG = Last_NG;
+				Last_NG = NG;
+			};
+
+			return NG;
+		};
+
+	/*==============================================================================================
 		Constructor
 	----------------------------------------------------------------------------------------------*/
 
@@ -42,7 +79,11 @@
 			// Initialize Alias
 			Alias = "New Neural Network";
 
+			// Initialize IDs + Lists
 			ID = 0;
+			Next_NG_ID = 1;
+			First_NG = NULL;
+			Last_NG = NULL;
 
 		};
 
@@ -113,6 +154,12 @@
 			// Print Neuron Groups (+Neurons +Synapses)
 			if (abs(NGD)>0 || abs(ND)>0 || abs(SD)>0) {
 				//for all neuron groups - print neuron group
+				Neural_Group * NG = First_NG;
+				while (NG != NULL) {
+					NG->Print_Report(FD, SD, ND, NGD);
+					NG = NG->Next_NG;
+					if (NG != NULL) Print_Header(FD);
+				};
 			}
 
 		}; 
