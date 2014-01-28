@@ -31,14 +31,8 @@
 		Neural Groups
 	----------------------------------------------------------------------------------------------*/
 
-		// Create a new neural group and return ID
-		int Neural_Net::New_NG() {
-			Neural_Group * NG = Construct_New_NG();
-			return NG->ID;
-		};
-
 		// Create a new neural group and return pointer
-		Neural_Group * Neural_Net::Construct_New_NG() {
+		Neural_Group * Neural_Net::New_NG() {
 
 			// Declare report
 			if (NN_Modification_Active) {

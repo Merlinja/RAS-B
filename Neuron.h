@@ -35,11 +35,47 @@
 				public:
 					// Finished
 
+					// Unfinished
+					// Constructor
+					Neuron();
+
+					// Identification
+					char* Alias;
+					int ID;
+
 					// Test
 					void Test();
 					Neural_Net * NN;
+					Neural_Group * Parent_NG;
 
-					// Unfinished
+					// List from NN
+					Neuron * Next_N;
+					Neuron * Prev_N;
+
+
+						/*==============================================================================================
+							Input / Output
+						----------------------------------------------------------------------------------------------*/
+							/*==============================================================================================
+								Reports / Generated Info
+							----------------------------------------------------------------------------------------------*/
+								// Prints a report, user specifies how much detail to give for each category.
+								void Print_Report(
+									// Positive integers: Print active
+									// Negative integers: Print all
+									FILE * FD = stdout, // File decriptor for report output
+									int SD = 1, // Synapse detail
+									int ND = 1); // Neuron detail
+
+								// Prints header for NG
+								void Print_Header(FILE * FD = stdout);
+								void Print_Label(FILE * FD = stdout);
+						/*----------------------------------------------------------------------------------------------
+							[END] Input / Output
+						==============================================================================================*/
+
+				private:
+
 					
 			};
 

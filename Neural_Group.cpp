@@ -35,6 +35,9 @@
 			Next_NG = NULL;
 			Prev_NG = NULL;
 
+			Next_N_ID = 1;
+			First_N = NULL;
+			Last_N= NULL;
 		};
 
 	/*==============================================================================================
@@ -73,6 +76,32 @@
 				else Next_NG->Print_Label(FD);
 			};
 
+			// Print Neurons (+Synapses)
+			if (NGD < 0 || abs(ND)>0 || abs(SD)>0) {
+
+				// IF active or printing existing
+				if (NGD < 0 || First_N != NULL) {
+					Print_Header(FD);
+					Print_Header(FD);
+					fprintf(FD, " <PRINTING NEURONS>");
+					Print_Header(FD);
+				};
+
+				if (NGD < 0 && First_N == NULL) {
+					Print_Header(FD);
+					fprintf(FD, " -- No neurons found.");
+				}
+
+				//for all neurons - print neurons
+				Neuron * N = First_N;
+				while (N != NULL) {
+					N->Print_Report(FD, SD, ND);
+					N = N->Next_N;
+					if (N != NULL) Print_Header(FD);
+					Print_Header(FD);
+				};
+			}
+
 		}; 
 
 		// Prints header for NG
@@ -84,6 +113,37 @@
 		// Prints label for NG
 		void Neural_Group::Print_Label(FILE * FD) {
 			fprintf(FD, "[NG:%i]", ID);
+		};
+
+	/*==============================================================================================
+		Neurons
+	----------------------------------------------------------------------------------------------*/
+
+		// Create a new neuron and return pointer
+		Neuron * Neural_Group::New_N() {
+
+			// Declare report
+			if (Parent_NN->NN_Modification_Active) {
+				Print_Header(Parent_NN->NN_Modification);
+				fprintf(Parent_NN->NN_Modification, " <CREATING NEW NEURON>");
+			};
+
+			Neuron * N = new Neuron();
+			N->ID = Next_N_ID; // Assign ID
+			Next_N_ID++;
+			N->Parent_NG = this; // Assign parent NG
+
+			// Add NG to NG list
+			if (First_N == NULL || Last_N == NULL) {
+				First_N = N;
+				Last_N = N;
+			} else {
+				Last_N->Next_N = N;
+				N->Prev_N = Last_N;
+				Last_N = N;
+			};
+
+			return N;
 		};
 
 /*============================================================================================*/
