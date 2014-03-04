@@ -7,7 +7,7 @@
 ==============================================================================================*/
 
 	#include "Neural_Net.h"
-
+	//using namespace std;
 /*==============================================================================================
 
 	Finished
@@ -102,7 +102,7 @@
 			fprintf(FD, " -- Alias: \"%s\"", Alias);
 
 			// Print Time Nodes
-			if (abs(TND)>0) {
+			if (std::abs(TND)>0) {
 				Print_Header(FD);
 				Print_Header(FD);
 				fprintf(FD, " <PRINTING TIME NODES>");
@@ -112,12 +112,12 @@
 				else fprintf(FD, "all");
 				fprintf(FD, " time nodes");
 				Print_Header(FD);
-				fprintf(FD, " -- Level of detail: %i", abs(TND));
+				fprintf(FD, " -- Level of detail: %i", int(std::abs(TND)));
 				Print_Header(FD);
 			}
 
 			// Print Channel Nodes
-			if (abs(CHD)>0) {
+			if (std::abs(CHD)>0) {
 				Print_Header(FD);
 				Print_Header(FD);
 				fprintf(FD, " <PRINTING CHANNEL NODES>");
@@ -127,12 +127,12 @@
 				else fprintf(FD, "all");
 				fprintf(FD, " channel nodes");
 				Print_Header(FD);
-				fprintf(FD, " -- Level of detail: %i", abs(CHD));
+				fprintf(FD, " -- Level of detail: %i", int(std::abs(CHD)));
 				Print_Header(FD);
 			}
 
 			// Declare Neuron Groups
-			if (abs(NGD)>0) {
+			if (std::abs(NGD)>0) {
 				Print_Header(FD);
 				Print_Header(FD);
 				fprintf(FD, " <PRINTING NEURON GROUPS>");
@@ -142,11 +142,11 @@
 				else fprintf(FD, "all");
 				fprintf(FD, " neuron groups");
 				Print_Header(FD);
-				fprintf(FD, " -- Level of detail: %i", abs(NGD));
+				fprintf(FD, " -- Level of detail: %i", int(std::abs(NGD)));
 				Print_Header(FD);
 			}
 			// Print Neuron Groups (+Neurons +Synapses)
-			if (abs(NGD)>0 || abs(ND)>0 || abs(SD)>0) {
+			if (std::abs(NGD)>0 || std::abs(ND)>0 || std::abs(SD)>0) {
 				//for all neuron groups - print neuron group
 				Neural_Group * NG = First_NG;
 				while (NG != NULL) {

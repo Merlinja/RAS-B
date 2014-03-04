@@ -53,7 +53,7 @@
 			int NGD) // Neural Group detail
 		{
 			// Detail: Declare report
-			if (abs(NGD)>0) {
+			if (std::abs(NGD)>0) {
 				Print_Header(FD);
 				fprintf(FD, " <PRINTING REPORT>");
 				Print_Header(FD);
@@ -61,7 +61,7 @@
 			};
 
 			// Detail: Print prev / next NG
-			if (abs(NGD)>1) {
+			if (std::abs(NGD)>1) {
 
 				// Print Prev
 				Print_Header(FD);
@@ -77,7 +77,7 @@
 			};
 
 			// Print Neurons (+Synapses)
-			if (NGD < 0 || abs(ND)>0 || abs(SD)>0) {
+			if (NGD < 0 || std::abs(ND)>0 || std::abs(SD)>0) {
 
 				// IF active or printing existing
 				if (NGD < 0 || First_N != NULL) {

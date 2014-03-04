@@ -35,7 +35,7 @@ void Neuron::Test()
 			int ND) // Neuron detail
 		{
 			// Detail: Declare report
-			if (abs(ND)>0) {
+			if (std::abs(ND)>0) {
 				Print_Header(FD);
 				fprintf(FD, " <PRINTING REPORT>");
 				Print_Header(FD);
@@ -43,7 +43,7 @@ void Neuron::Test()
 			};
 
 			// Detail: Print prev / next NG
-			if (abs(ND)>1) {
+			if (std::abs(ND)>1) {
 
 				// Print Prev
 				Print_Header(FD);
