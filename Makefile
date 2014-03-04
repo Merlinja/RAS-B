@@ -15,7 +15,7 @@ endif
 
 # C compiling flags
 CC=g++
-CFLAGS= -c -Wall
+CFLAGS= -c -Wall -Wno-write-strings
 OFLAGS= -Wall
 
 
