@@ -27,10 +27,10 @@ $(OBJS): $(SRCS) $(HDRS)
 #	$(CC) $(OFLAGS) $@.o $(OBJS) -o $@
 
 Driver: Driver.o ${OBJS} ${SRCS}
-	$(CC) -Wall Driver.o ${OBJS} -o Driver.exe
+	$(CC) -static -Wall Driver.o ${OBJS} -o Driver.exe
 
 E1: Experiment_1.o ${OBJS} ${SRCS}
-	$(CC) -Wall Experiment_1.o ${OBJS} -o E1.exe
+	$(CC) -static -Wall Experiment_1.o ${OBJS} -o E1.exe
 
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
